@@ -74,8 +74,1467 @@
 
     <main>
       <p style="color:#e5e7eb; max-width:50rem; font-size:0.95rem;">
-        This is a starter template wired up with your official OUTCOME badge logo. Replace this text
-        with the full SSP-01 and RGN-02 HTML content we've already created together.
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Outcome Protocols | SSP-01 & RGN-02</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #050608;
+      --bg-alt: #0c1015;
+      --card-bg: #10151d;
+      --border-soft: #232b38;
+      --text-main: #f7f7f7;
+      --text-muted: #9ca3af;
+      --accent-red: #f97373;
+      --accent-soft-red: #b91c1c;
+      --accent-cyan: #22d3ee;
+      --accent-green: #4ade80;
+      --accent-amber: #fbbf24;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top left, #111827 0, #020617 45%, #000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+
+    header.main-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 2px solid var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Oswald", sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .brand-text span:first-child {
+      font-family: "Oswald", sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      font-size: 0.85rem;
+    }
+
+    .brand-text span:last-child {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.12em;
+    }
+
+    nav.nav-links {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    nav.nav-links a {
+      color: var(--text-muted);
+    }
+
+    nav.nav-links a.active {
+      color: var(--accent-cyan);
+    }
+
+    /* Hero sections */
+    .hero {
+      border-radius: 1.5rem;
+      background: radial-gradient(circle at top, #111827 0, #020617 55%, #000 100%);
+      border: 1px solid var(--border-soft);
+      padding: 2.25rem 1.75rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at top right, rgba(34, 211, 238, 0.12), transparent 55%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.2fr);
+      gap: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-label {
+      font-family: "Oswald", sans-serif;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-amber);
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-heading {
+      font-family: "Oswald", sans-serif;
+      font-size: 2.2rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 0 0 0.5rem;
+    }
+
+    .hero-subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 34rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .badge {
+      border-radius: 999px;
+      padding: 0.25rem 0.7rem;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      border: 1px solid var(--border-soft);
+      background: rgba(15, 23, 42, 0.85);
+      color: var(--text-muted);
+    }
+
+    .badge.badge-red {
+      border-color: var(--accent-soft-red);
+      color: var(--accent-red);
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem 1.6rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border: 1px solid transparent;
+      cursor: pointer;
+      background: none;
+      color: var(--text-main);
+    }
+
+    .btn-primary {
+      background: linear-gradient(to right, var(--accent-soft-red), var(--accent-red));
+      border-color: var(--accent-soft-red);
+    }
+
+    .btn-outline {
+      border-color: var(--border-soft);
+      color: var(--text-muted);
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 0.8rem;
+      font-size: 0.75rem;
+    }
+
+    .meta-card {
+      border-radius: 1rem;
+      padding: 0.75rem 0.9rem;
+      border: 1px solid var(--border-soft);
+      background: rgba(15, 23, 42, 0.85);
+    }
+
+    .meta-label {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .meta-value {
+      font-family: "Oswald", sans-serif;
+      font-size: 0.98rem;
+      letter-spacing: 0.06em;
+    }
+
+    .hero-right {
+      border-radius: 1.2rem;
+      border: 1px solid var(--border-soft);
+      background: rgba(15, 23, 42, 0.96);
+      padding: 1.2rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      font-size: 0.8rem;
+    }
+
+    .hero-right h3 {
+      margin: 0;
+      font-family: "Oswald", sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+    }
+
+    .hero-right p {
+      margin: 0;
+      color: var(--text-muted);
+    }
+
+    .hero-right ul {
+      margin: 0.4rem 0 0 1.1rem;
+      padding: 0;
+      color: var(--text-muted);
+    }
+
+    .disclaimer-box {
+      border-radius: 0.9rem;
+      border: 1px solid rgba(248, 250, 252, 0.18);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 0.9rem 1rem;
+      margin-top: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .disclaimer-box strong {
+      color: var(--accent-amber);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.7rem;
+    }
+
+    /* Content sections */
+    section {
+      margin-bottom: 2.75rem;
+    }
+
+    h2.section-title {
+      font-family: "Oswald", sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-intro {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      max-width: 54rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* Tables */
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 1rem;
+      border: 1px solid var(--border-soft);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+    }
+
+    th,
+    td {
+      padding: 0.65rem 0.75rem;
+      border-bottom: 1px solid var(--border-soft);
+      text-align: left;
+    }
+
+    th {
+      font-family: "Oswald", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    tbody tr:nth-child(even) {
+      background: rgba(15, 23, 42, 0.82);
+    }
+
+    /* Daily flow */
+    .flow-list {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.85rem;
+      font-size: 0.85rem;
+    }
+
+    .flow-item {
+      border-radius: 0.9rem;
+      border: 1px solid var(--border-soft);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 0.75rem 0.9rem;
+    }
+
+    .flow-item h3 {
+      margin: 0 0 0.35rem;
+      font-family: "Oswald", sans-serif;
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-cyan);
+    }
+
+    .flow-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent-amber);
+      margin-bottom: 0.15rem;
+    }
+
+    .flow-item ul {
+      margin: 0.2rem 0 0 1rem;
+      padding: 0;
+      color: var(--text-muted);
+    }
+
+    /* Peptide cards */
+    .peptide-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.25rem;
+    }
+
+    .peptide-card {
+      border-radius: 1.1rem;
+      border: 1px solid var(--border-soft);
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.88));
+      padding: 1.1rem 1.1rem 1rem;
+      font-size: 0.85rem;
+    }
+
+    .peptide-header-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .peptide-name {
+      font-family: "Oswald", sans-serif;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .peptide-role {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.12rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent-cyan);
+      color: var(--accent-cyan);
+      font-size: 0.66rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .peptide-meta {
+      margin: 0.45rem 0 0.6rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .peptide-columns {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .peptide-columns {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .peptide-block-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent-amber);
+      margin-bottom: 0.2rem;
+    }
+
+    .peptide-list {
+      margin: 0.1rem 0 0.4rem 1.1rem;
+      padding: 0;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .peptide-list li {
+      margin-bottom: 0.16rem;
+    }
+
+    .peptide-subtle-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Reconstitution info */
+    .recon-box {
+      margin-top: 0.35rem;
+      padding: 0.55rem 0.7rem;
+      border-radius: 0.8rem;
+      border: 1px dashed var(--border-soft);
+      background: rgba(15, 23, 42, 0.96);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .recon-box strong {
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.7rem;
+    }
+
+    /* Intro “New to peptides?” box */
+    .info-box {
+      border-radius: 1rem;
+      border: 1px solid var(--border-soft);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 1rem 1.1rem;
+      margin-bottom: 2.2rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .info-box h2 {
+      margin: 0 0 0.45rem;
+      font-family: "Oswald", sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+    }
+
+    .info-box ul {
+      margin: 0.35rem 0 0 1.1rem;
+      padding: 0;
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-soft);
+      padding-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="main-header">
+      <div class="brand">
+        <div class="brand-mark">OC</div>
+        <div class="brand-text">
+          <span>OUTCOME</span>
+          <span>TACTICAL PROTOCOLS</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#ssp-01" class="active">SSP-01</a>
+        <a href="#rgn-02">RGN-02</a>
+      </nav>
+    </header>
+
+    <section class="info-box" id="intro">
+      <h2>New to peptides?</h2>
+      <p>
+        Think of peptides as short chains of amino acids that act like tiny “signals” in the body. Different peptides
+        support different processes: recovery, hormone balance, tissue repair, or body composition.
+      </p>
+      <ul>
+        <li><strong>These pages are educational only.</strong> They are written so that even someone with zero peptide knowledge can follow along.</li>
+        <li>Real-world use, prescriptions, dosing, and mixing should always be handled by a licensed medical professional.</li>
+        <li>We’ll explain what each peptide does, when it’s typically used in a protocol, and why it’s in that stack.</li>
+      </ul>
+    </section>
+
+    <!-- ==============================
+         SSP-01 — SUPER SOLDIER PROTOCOL
+         ============================== -->
+    <a id="ssp-01"></a>
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-label">File SSP-01</div>
+          <h1 class="hero-heading">Super Soldier Protocol</h1>
+          <p class="hero-subtitle">
+            Tier-1 human performance protocol combining GH support, tissue repair, metabolic assistance, and muscle-focused tools — engineered for serious trainees and performance-focused individuals.
+          </p>
+          <div class="hero-badges">
+            <span class="badge badge-red">Level 7 Clearance</span>
+            <span class="badge">GH Optimization</span>
+            <span class="badge">Tissue Repair</span>
+            <span class="badge">Body Recomposition</span>
+          </div>
+          <div class="hero-ctas">
+            <button class="btn btn-primary">View Full Protocol</button>
+            <button class="btn btn-outline" onclick="document.getElementById('rgn-02').scrollIntoView({behavior:'smooth'})">
+              Compare With RGN-02
+            </button>
+          </div>
+          <div class="hero-meta">
+            <div class="meta-card">
+              <div class="meta-label">Duration</div>
+              <div class="meta-value">6–12 Weeks</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-label">Focus</div>
+              <div class="meta-value">Performance + Recomp</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-label">Experience</div>
+              <div class="meta-value">Intermediate–Advanced</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <h3>Educational Use Only</h3>
+          <p>
+            This page explains the structure and logic of the Super Soldier Protocol (SSP-01) so you can understand
+            <em>why</em> each component exists. It is not a treatment plan or a recommendation.
+          </p>
+          <ul>
+            <li>No sourcing or DIY recommendations.</li>
+            <li>No medical decisions should be made from this page.</li>
+            <li>All use of peptides must be guided by a licensed medical professional.</li>
+          </ul>
+          <div class="disclaimer-box">
+            <strong>Disclaimer</strong><br />
+            Information here is for education only and does not constitute medical advice, diagnosis, or treatment. Always
+            work with a qualified clinician for prescriptions, dosing, and reconstitution.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Protocol Overview</h2>
+      <p class="section-intro">
+        SSP-01 combines several peptide “modules.” Each module supports a specific outcome — such as growth hormone (GH)
+        support, tissue repair, or fat metabolism. Your clinician may include some or all of these based on your goals,
+        history, and lab work.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Module</th>
+              <th>Peptides</th>
+              <th>Primary Goals</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GH / Performance</td>
+              <td>CJC-1295 (no DAC) + Ipamorelin</td>
+              <td>Support natural GH pulses, recovery, sleep, and body composition.</td>
+            </tr>
+            <tr>
+              <td>Healing &amp; Recovery</td>
+              <td>BPC-157 + TB-500</td>
+              <td>Soft-tissue recovery, tendon/ligament support, training resilience.</td>
+            </tr>
+            <tr>
+              <td>Collagen &amp; Longevity</td>
+              <td>GHK-Cu</td>
+              <td>Support collagen, tissue quality, and long-term resilience.</td>
+            </tr>
+            <tr>
+              <td>Fat Loss (Optional)</td>
+              <td>AOD-9604</td>
+              <td>Additional fat metabolism support during cutting/recomp phases.</td>
+            </tr>
+            <tr>
+              <td>Advanced Muscle (Optional)</td>
+              <td>IGF-1 LR3 / IGF-1 DES</td>
+              <td>Advanced, clinician-guided tools focused on muscle density and nutrient partitioning.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Daily &amp; Weekly Flow (Educational)</h2>
+      <p class="section-intro">
+        This is a sample <strong>structure</strong> designed to show how the different pieces of SSP-01 might be scheduled.
+        It is not a prescription. Real-world timing and dosing must be created by a clinician.
+      </p>
+      <div class="flow-list">
+        <div class="flow-item">
+          <div class="flow-label">Morning — Fasted</div>
+          <h3>AM Window</h3>
+          <ul>
+            <li>Optional GH support: CJC-1295 (no DAC) + Ipamorelin if your clinician uses a morning dose.</li>
+            <li>Optional fat-loss support: AOD-9604, if included in your plan.</li>
+            <li>Hydration, light movement, and any clinician-approved fasted cardio.</li>
+          </ul>
+        </div>
+        <div class="flow-item">
+          <div class="flow-label">Pre-Training</div>
+          <h3>Pre-Workout</h3>
+          <ul>
+            <li>Optional advanced module: IGF-1 LR3 or IGF-1 DES (for experienced, medically supervised users only).</li>
+            <li>Warm-up, activation work, and mental prep for training.</li>
+          </ul>
+        </div>
+        <div class="flow-item">
+          <div class="flow-label">Post-Training</div>
+          <h3>Post-Workout</h3>
+          <ul>
+            <li>Optional BPC-157 for joints or soft tissues your clinician is targeting.</li>
+            <li>Protein + carbohydrates to support recovery.</li>
+          </ul>
+        </div>
+        <div class="flow-item">
+          <div class="flow-label">Evening</div>
+          <h3>Night Window</h3>
+          <ul>
+            <li>CJC-1295 (no DAC) + Ipamorelin about 1 hour before bed (no food 2–3 hours before, if instructed).</li>
+            <li>GHK-Cu in the evening if included.</li>
+            <li>Optional second BPC-157 dose (as directed).</li>
+          </ul>
+        </div>
+        <div class="flow-item">
+          <div class="flow-label">Weekly Rhythm</div>
+          <h3>Weekly Pattern</h3>
+          <ul>
+            <li>TB-500 split into 2–3 doses per week (example: Monday/Wednesday/Friday) if part of your protocol.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SSP-01 Peptide-by-peptide breakdown -->
+    <section>
+      <h2 class="section-title">Peptide Breakdown — SSP-01</h2>
+      <p class="section-intro">
+        Below, each peptide is explained in plain language: what it’s for, when it’s typically used in the protocol, and
+        why it’s part of the Super Soldier stack. All dosing and reconstitution content is educational only.
+      </p>
+
+      <div class="peptide-grid">
+        <!-- CJC-1295 (no DAC) -->
+        <article class="peptide-card">
+          <div class="peptide-header-line">
+            <div>
+              <div class="peptide-name">CJC-1295 (No DAC)</div>
+              <div class="peptide-role">GH axis support</div>
+            </div>
+            <span class="pill">Core GH Stack</span>
+          </div>
+          <p class="peptide-meta">
+            CJC-1295 (no DAC) is often discussed as a way to support the body’s own growth hormone (GH) pulses rather than
+            replacing GH directly.
+          </p>
+
+          <div class="peptide-columns">
+            <div>
+              <div class="peptide-block-title">Educational Dose &amp; Timing</div>
+              <ul class="peptide-list">
+                <li>Typical dose range: <strong>100–200 mcg</strong> per administration.</li>
+                <li>Common frequency: <strong>1–2× per day</strong> (for example, evening ± optional morning).</li>
+                <li>Often taken about <strong>1 hour before bed</strong>, away from food.</li>
+              </ul>
+
+              <div class="peptide-block-title">Key Benefits (Educational)</div>
+              <ul class="peptide-list">
+                <li>Supports natural GH release patterns.</li>
+                <li>Often used for recovery, body composition, and sleep quality support.</li>
+                <li>Works synergistically with Ipamorelin in many protocols.</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="peptide-block-title">Why It’s in SSP-01</div>
+              <ul class="peptide-list">
+                <li>Acts as the “signal” that primes the GH axis in a more physiologic way.</li>
+                <li>Created to form the base of the performance and recovery aspect of SSP-01.</li>
+                <li>Helps set the stage for better tissue repair, fat loss, and training adaptation.</li>
+              </ul>
+
+              <div class="recon-box">
+                <strong>Reconstitution (Educational Overview)</strong>
+                <p>
+                  Clinically, CJC-1295 (no DAC) is supplied as a dry (lyophilized) powder. A licensed professional
+                  typically:
+                </p>
+                <ul class="peptide-list">
+                  <li>Adds a measured amount of sterile/bacteriostatic water to the vial.</li>
+                  <li>Calculates the resulting concentration (for example, micrograms per milliliter).</li>
+                  <li>Prescribes a specific dose and explains how much volume to draw for each injection.</li>
+                </ul>
+                <p class="peptide-subtle-note">
+                  This explanation is to help you understand the math and terminology you may hear from your clinician.
+                  It is <strong>not</strong> an instruction to mix or inject anything yourself.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Ipamorelin -->
+        <article class="peptide-card">
+          <div class="peptide-header-line">
+            <div>
+              <div class="peptide-name">Ipamorelin</div>
+              <div class="peptide-role">GH secretagogue</div>
+            </div>
+            <span class="pill">Core GH Stack</span>
+          </div>
+          <p class="peptide-meta">
+            Ipamorelin is another GH secretagogue that is often paired with CJC-1295 to amplify GH pulses while targeting a
+            favorable side-effect profile.
+          </p>
+
+          <div class="peptide-columns">
+            <div>
+              <div class="peptide-block-title">Educational Dose &amp; Timing</div>
+              <ul class="peptide-list">
+                <li>Typical dose range: <strong>100–200 mcg</strong> per administration.</li>
+                <li>Common frequency: <strong>1–2× per day</strong>, frequently aligned with CJC-1295 timing.</li>
+                <li>Often part of a <strong>pre-bed protocol</strong> to pair with natural nighttime GH surges.</li>
+              </ul>
+
+              <div class="peptide-block-title">Key Benefits (Educational)</div>
+              <ul class="peptide-list">
+                <li>Supports GH release without large spikes in cortisol or prolactin.</li>
+                <li>Often used to support recovery, sleep quality, and body composition.</li>
+                <li>Pairs naturally with CJC-1295 in GH-support stacks.</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="peptide-block-title">Why It’s in SSP-01</div>
+              <ul class="peptide-list">
+                <li>Designed to amplify the GH signal started by CJC-1295.</li>
+                <li>Helps create a stronger, yet still physiologic, GH environment for recovery and performance.</li>
+                <li>Part of the “core” Super Soldier GH / performance stack.</li>
+              </ul>
+
+              <div class="recon-box">
+                <strong>Reconstitution (Educational Overview)</strong>
+                <p>
+                  As with CJC-1295, Ipamorelin is typically supplied as a powder and is reconstituted by a clinician:
+                </p>
+                <ul class="peptide-list">
+                  <li>Sterile/bacteriostatic water is added under controlled conditions.</li>
+                  <li>A concentration is calculated (for example, mcg per mL).</li>
+                  <li>A clear dosing schedule and volume-per-injection are provided to the patient.</li>
+                </ul>
+                <p class="peptide-subtle-note">
+                  You should never attempt to mix or inject Ipamorelin without direct medical supervision.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- BPC-157 -->
+        <article class="peptide-card">
+          <div class="peptide-header-line">
+            <div>
+              <div class="peptide-name">BPC-157</div>
+              <div class="peptide-role">Tissue repair support</div>
+            </div>
+            <span class="pill">Recovery Stack</span>
+          </div>
+          <p class="peptide-meta">
+            BPC-157 is frequently discussed in the context of tendon, ligament, and soft-tissue support, as well as gut
+            integrity.
+          </p>
+
+          <div class="peptide-columns">
+            <div>
+              <div class="peptide-block-title">Educational Dose &amp; Timing</div>
+              <ul class="peptide-list">
+                <li>Typical daily range: <strong>250–500 mcg</strong>.</li>
+                <li>May be taken once per day or split (AM / PM) under a clinician’s guidance.</li>
+                <li>Sometimes targeted near an area of concern, based on medical direction.</li>
+              </ul>
+
+              <div class="peptide-block-title">Key Benefits (Educational)</div>
+              <ul class="peptide-list">
+                <li>Often discussed for tendon/ligament support.</li>
+                <li>Frequently mentioned regarding tissue recovery and inflammation modulation.</li>
+                <li>Popular in rehab or heavy training environments.</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="peptide-block-title">Why It’s in SSP-01</div>
+              <ul class="peptide-list">
+                <li>SSP-01 assumes intense physical effort and load.</li>
+                <li>BPC-157 is included to help support tissues under that stress.</li>
+                <li>Acts as a core part of SSP-01’s “Wolverine-style” recovery engine.</li>
+              </ul>
+
+              <div class="recon-box">
+                <strong>Reconstitution (Educational Overview)</strong>
+                <p>
+                  BPC-157 is also typically reconstituted from powder form. In a medical setting:
+                </p>
+                <ul class="peptide-list">
+                  <li>A clinician adds sterile/bacteriostatic water to the vial.</li>
+                  <li>The resulting concentration is documented in the patient instructions.</li>
+                  <li>Volume drawn into a syringe corresponds to the prescribed microgram dose.</li>
+                </ul>
+                <p class="peptide-subtle-note">
+                  This overview is to help patients ask better questions and understand dosing math — not to enable
+                  unsupervised use.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- TB-500 -->
+        <article class="peptide-card">
+          <div class="peptide-header-line">
+            <div>
+              <div class="peptide-name">TB-500</div>
+              <div class="peptide-role">Systemic regeneration</div>
+            </div>
+            <span class="pill">Recovery Stack</span>
+          </div>
+          <p class="peptide-meta">
+            TB-500 is often discussed for its systemic effects on tissue healing and mobility through actin-related
+            pathways.
+          </p>
+
+          <div class="peptide-columns">
+            <div>
+              <div class="peptide-block-title">Educational Dose &amp; Timing</div>
+              <ul class="peptide-list">
+                <li>Typical weekly range: <strong>2–5 mg per week</strong>.</li>
+                <li>Often split into <strong>2–3 injections per week</strong>.</li>
+                <li>Used as part of a multi-week cycle under clinician supervision.</li>
+              </ul>
+
+              <div class="peptide-block-title">Key Benefits (Educational)</div>
+              <ul class="peptide-list">
+                <li>System-wide support for tissue healing processes.</li>
+                <li>Often discussed for improved recovery and joint comfort.</li>
+                <li>Complements the more localized support of BPC-157.</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="peptide-block-title">Why It’s in SSP-01</div>
+              <ul class="peptide-list">
+                <li>Designed to support the entire musculoskeletal system, not just one area.</li>
+                <li>Pairs with heavy training, where multiple joints / tissues may be stressed at once.</li>
+                <li>Helps create the “Wolverine” feel inside a performance-focused program.</li>
+              </ul>
+
+              <div class="recon-box">
+                <strong>Reconstitution (Educational Overview)</strong>
+                <p>
+                  TB-500 is typically supplied in higher milligram vials. A clinician:
+                </p>
+                <ul class="peptide-list">
+                  <li>Determines the appropriate total dose and cycle.</li>
+                  <li>Reconstitutes the vial with sterile/bacteriostatic water.</li>
+                  <li>Provides exact instructions on how much volume equals each weekly or split dose.</li>
+                </ul>
+                <p class="peptide-subtle-note">
+                  Always rely on explicit medical instructions for mixing volume and injection technique.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- GHK-Cu -->
+        <article class="peptide-card">
+          <div class="peptide-header-line">
+            <div>
+              <div class="peptide-name">GHK-Cu</div>
+              <div class="peptide-role">Collagen &amp; tissue quality</div>
+            </div>
+            <span class="pill">Longevity Stack</span>
+          </div>
+          <p class="peptide-meta">
+            GHK-Cu is a copper-bound peptide often associated with collagen formation, skin quality, and tissue
+            remodeling.
+          </p>
+
+          <div class="peptide-columns">
+            <div>
+              <div class="peptide-block-title">Educational Dose &amp; Timing</div>
+              <ul class="peptide-list">
+                <li>Typical daily range: <strong>1–2 mg</strong>.</li>
+                <li>Often taken in the <strong>evening</strong>, overlapping with recovery-focused signals.</li>
+              </ul>
+
+              <div class="peptide-block-title">Key Benefits (Educational)</div>
+              <ul class="peptide-list">
+                <li>Supports collagen production and tissue quality.</li>
+                <li>Frequently discussed for skin and hair appearance.</li>
+                <li>May support connective tissue resilience.</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="peptide-block-title">Why It’s in SSP-01</div>
+              <ul class="peptide-list">
+                <li>SSP-01 doesn’t just address performance; it also favors long-term tissue health.</li>
+                <li>GHK-Cu is included to support the “building materials” behind tendons, skin, and fascia.</li>
+                <li>Pairs well with a recovery-heavy program where tissues are repairing daily.</li>
+              </ul>
+
+              <div class="recon-box">
+                <strong>Reconstitution (Educational Overview)</strong>
+                <p>
+                  In medical practice, GHK-Cu may be used in topical or injectable formats. When injectable:
+                </p>
+                <ul class="peptide-list">
+                  <li>A clinician reconstitutes the powder with sterile fluid.</li>
+                  <li>Documents the concentration and daily dose clearly.</li>
+                  <li>Explains whether the plan is more aesthetic, structural, or both.</li>
+                </ul>
+                <p class="peptide-subtle-note">
+                  The exact form, route, and dose should always be personally prescribed.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- AOD-9604 -->
+        <article class="peptide-card">
+          <div class="peptide-header-line">
+            <div>
+              <div class="peptide-name">AOD-9604</div>
+              <div class="peptide-role">Fat metabolism support</div>
+            </div>
+            <span class="pill">Optional Module</span>
+          </div>
+          <p class="peptide-meta">
+            AOD-9604 is a peptide fragment often discussed in the context of fat metabolism and body recomposition
+            strategies.
+          </p>
+
+          <div class="peptide-columns">
+            <div>
+              <div class="peptide-block-title">Educational Dose &amp; Timing</div>
+              <ul class="peptide-list">
+                <li>Typical daily value discussed: around <strong>300 mcg</strong>.</li>
+                <li>Commonly mentioned timing: <strong>morning, fasted</strong>.</li>
+              </ul>
+
+              <div class="peptide-block-title">Key Benefits (Educational)</div>
+              <ul class="peptide-list">
+                <li>Often used as an adjunct to diet and activity for fat-loss support.</li>
+                <li>Discussed as more specific to metabolic pathways rather than whole-GH effects.</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="peptide-block-title">Why It’s in SSP-01</div>
+              <ul class="peptide-list">
+                <li>Provides additional metabolic leverage during cutting or recomposition phases.</li>
+                <li>Used when body composition (fat reduction) is a high-priority goal.</li>
+              </ul>
+
+              <div class="recon-box">
+                <strong>Reconstitution (Educational Overview)</strong>
+                <p>
+                  As with the others, AOD-9604 is typically reconstituted from powder form:
+                </p>
+                <ul class="peptide-list">
+                  <li>Clinician selects a volume of bacteriostatic water for the vial.</li>
+                  <li>Concentration is documented in the patient’s instructions.</li>
+                  <li>Daily dose is expressed both in micrograms and in mL or “units” on the syringe.</li>
+                </ul>
+                <p class="peptide-subtle-note">
+                  The patient follows a clear, written plan rather than trying to calculate this alone.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- IGF-1 LR3 & DES -->
+        <article class="peptide-card">
+          <div class="peptide-header-line">
+            <div>
+              <div class="peptide-name">IGF-1 LR3 / IGF-1 DES</div>
+              <div class="peptide-role">Advanced muscle tools</div>
+            </div>
+            <span class="pill">Advanced Only</span>
+          </div>
+          <p class="peptide-meta">
+            IGF-1 analogues such as LR3 and DES are advanced tools that are sometimes discussed for muscle growth and
+            nutrient partitioning. Their use is generally limited to highly supervised scenarios.
+          </p>
+
+          <div class="peptide-columns">
+            <div>
+              <div class="peptide-block-title">Educational Dose &amp; Timing</div>
+              <ul class="peptide-list">
+                <li>IGF-1 LR3: typical range discussed is <strong>20–40 mcg</strong> pre-workout.</li>
+                <li>IGF-1 DES: often mentioned around <strong>20 mcg</strong> in a targeted area pre-workout.</li>
+                <li>Only considered for experienced users under close medical oversight.</li>
+              </ul>
+
+              <div class="peptide-block-title">Key Benefits (Educational)</div>
+              <ul class="peptide-list">
+                <li>Support for lean mass development and nutrient utilization.</li>
+                <li>Potential for site-specific focus (DES) in advanced, medically directed protocols.</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="peptide-block-title">Why They’re in SSP-01 (Optional)</div>
+              <ul class="peptide-list">
+                <li>Reserved for high-level performance contexts with strong medical supervision.</li>
+                <li>Included as an advanced module for individuals whose primary goal is muscle density and strength.</li>
+              </ul>
+
+              <div class="recon-box">
+                <strong>Reconstitution (Educational Overview)</strong>
+                <p>
+                  IGF-1 analogues are strictly advanced-use compounds. In a clinical setting:
+                </p>
+                <ul class="peptide-list">
+                  <li>The clinician handles all reconstitution and concentration decisions.</li>
+                  <li>Only precise, written dosing instructions should be followed.</li>
+                  <li>Patients should never attempt to improvise doses or mixing volumes.</li>
+                </ul>
+                <p class="peptide-subtle-note">
+                  If IGF-1 is mentioned in your plan, ensure all questions on risk, benefit, and dosing are answered by
+                  your medical provider.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==============================
+         RGN-02 — WOLVERINE PROTOCOL
+         ============================== -->
+    <a id="rgn-02"></a>
+    <section class="hero" style="margin-top:3rem;">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-label">File RGN-02</div>
+          <h1 class="hero-heading">Wolverine Regeneration Program</h1>
+          <p class="hero-subtitle">
+            RGN-02 focuses on tendon, ligament, and soft-tissue support. It’s the “repair” protocol — designed for people
+            working with a medical professional on recovery from heavy training or injury.
+          </p>
+          <div class="hero-badges">
+            <span class="badge badge-red">Level 6 Clearance</span>
+            <span class="badge">Tendon &amp; Ligament Support</span>
+            <span class="badge">Soft-Tissue Recovery</span>
+          </div>
+          <div class="hero-ctas">
+            <button class="btn btn-primary">View Wolverine Outline</button>
+            <button class="btn btn-outline" onclick="document.getElementById('ssp-01').scrollIntoView({behavior:'smooth'})">
+              Jump to Super Soldier
+            </button>
+          </div>
+          <div class="hero-meta">
+            <div class="meta-card">
+              <div class="meta-label">Duration</div>
+              <div class="meta-value">4–8 Weeks</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-label">Focus</div>
+              <div class="meta-value">Regen &amp; Rehab</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-label">Best For</div>
+              <div class="meta-value">Injury + PT Support</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <h3>Educational Use Only</h3>
+          <p>
+            RGN-02 is described here so you can understand the <em>logic</em> behind a tissue-focused protocol. It is not a
+            DIY rehab plan and does not replace formal physical therapy or medical care.
+          </p>
+          <ul>
+            <li>Work with a licensed medical professional for diagnosis and treatment.</li>
+            <li>Use this as a conversation tool, not an instruction manual.</li>
+          </ul>
+          <div class="disclaimer-box">
+            <strong>Disclaimer</strong><br />
+            All information is general and educational. It does not diagnose, treat, or prescribe. Always follow the
+            guidance of your doctor or healthcare team.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Protocol Overview — RGN-02</h2>
+      <p class="section-intro">
+        The Wolverine Regeneration Program (RGN-02) prioritizes healing and connective tissue support. Where SSP-01 leans
+        into performance and body composition, RGN-02 is far more focused on recovery, joint comfort, and structural
+        resilience.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Peptide</th>
+              <th>Primary Goal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Local Repair</td>
+              <td>BPC-157</td>
+              <td>Targeted support for tendons, ligaments, and soft-tissue areas.</td>
+            </tr>
+            <tr>
+              <td>Systemic Repair</td>
+              <td>TB-500</td>
+              <td>System-wide support for healing and mobility.</td>
+            </tr>
+            <tr>
+              <td>Remodeling &amp; Collagen</td>
+              <td>GHK-Cu</td>
+              <td>Collagen structure, tissue quality, and long-term resilience.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Daily &amp; Weekly Flow — RGN-02</h2>
+      <p class="section-intro">
+        Again, this is a structural example to show how components <em>could</em> be scheduled. Real treatment plans must be
+        tailored and supervised by a licensed clinician.
+      </p>
+      <div class="flow-list">
+        <div class="flow-item">
+          <div class="flow-label">Daily</div>
+          <h3>BPC-157 &amp; GHK-Cu</h3>
+          <ul>
+            <li>BPC-157 used once or twice daily as directed, often associated with the area of concern.</li>
+            <li>GHK-Cu taken daily to support collagen and tissue quality.</li>
+          </ul>
+        </div>
+        <div class="flow-item">
+          <div class="flow-label">Weekly</div>
+          <h3>TB-500 Rhythm</h3>
+          <ul>
+            <li>TB-500 split into 2–3 doses per week as part of a multi-week recovery cycle.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Peptide Breakdown — RGN-02</h2>
+      <p class="section-intro">
+        Here is the same level of breakdown for Wolverine as we used for Super Soldier — focusing on what each peptide
+        does, why it’s here, and what reconstitution typically means in a clinical environment.
+      </p>
+
+      <div class="peptide-grid">
+        <!-- BPC-157 -->
+        <article class="peptide-card">
+          <div class="peptide-header-line">
+            <div>
+              <div class="peptide-name">BPC-157</div>
+              <div class="peptide-role">Local repair support</div>
+            </div>
+            <span class="pill">Core Regen</span>
+          </div>
+          <p class="peptide-meta">
+            BPC-157 is central to RGN-02 — it is frequently discussed for its potential benefits around tendon, ligament,
+            and localized soft-tissue support.
+          </p>
+
+          <div class="peptide-columns">
+            <div>
+              <div class="peptide-block-title">Educational Dose &amp; Timing</div>
+              <ul class="peptide-list">
+                <li>Commonly discussed total: <strong>250–500 mcg per day</strong>.</li>
+                <li>Sometimes split into morning and evening doses.</li>
+                <li>Direction about “local vs systemic” use comes from a clinician.</li>
+              </ul>
+
+              <div class="peptide-block-title">Key Benefits (Educational)</div>
+              <ul class="peptide-list">
+                <li>Supports recovery in tendons and ligaments.</li>
+                <li>Often used along with physical therapy and rehab exercises.</li>
+                <li>May support joint comfort and return to movement.</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="peptide-block-title">Why It’s in RGN-02</div>
+              <ul class="peptide-list">
+                <li>Acts as the “front-line” peptide for targeted tissue comfort and support.</li>
+                <li>Designed to pair with progressive rehab and controlled training.</li>
+              </ul>
+
+              <div class="recon-box">
+                <strong>Reconstitution (Educational Overview)</strong>
+                <p>
+                  For BPC-157 in RGN-02:
+                </p>
+                <ul class="peptide-list">
+                  <li>A clinician selects the vial strength and total planned daily amount.</li>
+                  <li>The powder is reconstituted with sterile/bacteriostatic water.</li>
+                  <li>The patient is given a simple instruction: “draw up X volume for Y micrograms.”</li>
+                </ul>
+                <p class="peptide-subtle-note">
+                  If anything about those instructions is unclear, patients should ask their provider to walk them through
+                  it step-by-step.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- TB-500 -->
+        <article class="peptide-card">
+          <div class="peptide-header-line">
+            <div>
+              <div class="peptide-name">TB-500</div>
+              <div class="peptide-role">Systemic healing</div>
+            </div>
+            <span class="pill">Core Regen</span>
+          </div>
+          <p class="peptide-meta">
+            TB-500 is designed to work more globally, supporting healing and mobility throughout the body rather than just
+            one targeted area.
+          </p>
+
+          <div class="peptide-columns">
+            <div>
+              <div class="peptide-block-title">Educational Dose &amp; Timing</div>
+              <ul class="peptide-list">
+                <li>Range frequently discussed: <strong>2–5 mg per week</strong>.</li>
+                <li>Administered as <strong>split doses</strong> during the week.</li>
+              </ul>
+
+              <div class="peptide-block-title">Key Benefits (Educational)</div>
+              <ul class="peptide-list">
+                <li>Systemic support for recovery from widespread or multi-site stress.</li>
+                <li>Complements the more local action of BPC-157.</li>
+                <li>Helps support active individuals with multiple stressed joints/tissues.</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="peptide-block-title">Why It’s in RGN-02</div>
+              <ul class="peptide-list">
+                <li>Wolverine isn’t just about one joint; it’s about the whole system.</li>
+                <li>TB-500 is included to “widen the net” of recovery support across the body.</li>
+              </ul>
+
+              <div class="recon-box">
+                <strong>Reconstitution (Educational Overview)</strong>
+                <p>
+                  TB-500 vials for RGN-02 are typically reconstituted similarly to SSP-01:
+                </p>
+                <ul class="peptide-list">
+                  <li>The vial contains a set amount of TB-500 in mg.</li>
+                  <li>A clinician chooses how much sterile water to add for a convenient weekly dose.</li>
+                  <li>The weekly plan (and each split dose) is laid out clearly in mL or syringe “units.”</li>
+                </ul>
+                <p class="peptide-subtle-note">
+                  All calculations and adjustments should be left to the medical team, not the patient.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- GHK-Cu -->
+        <article class="peptide-card">
+          <div class="peptide-header-line">
+            <div>
+              <div class="peptide-name">GHK-Cu</div>
+              <div class="peptide-role">Collagen &amp; remodeling</div>
+            </div>
+            <span class="pill">Structural Support</span>
+          </div>
+          <p class="peptide-meta">
+            In Wolverine, GHK-Cu is geared less toward aesthetics and more toward the quality of healing and collagen
+            structure in the recovering tissues.
+          </p>
+
+          <div class="peptide-columns">
+            <div>
+              <div class="peptide-block-title">Educational Dose &amp; Timing</div>
+              <ul class="peptide-list">
+                <li>Range often discussed: <strong>1–2 mg per day</strong>.</li>
+                <li>Can be timed to overlap with evening recovery, depending on the plan.</li>
+              </ul>
+
+              <div class="peptide-block-title">Key Benefits (Educational)</div>
+              <ul class="peptide-list">
+                <li>Supports collagen matrix formation.</li>
+                <li>May improve tissue quality as healing progresses.</li>
+                <li>Adds a structural “finishing layer” to the recovery process.</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="peptide-block-title">Why It’s in RGN-02</div>
+              <ul class="peptide-list">
+                <li>Recovering tissue is not just about speed; it’s about quality.</li>
+                <li>GHK-Cu is included so the collagen framework being laid down can be as robust as possible.</li>
+              </ul>
+
+              <div class="recon-box">
+                <strong>Reconstitution (Educational Overview)</strong>
+                <p>
+                  For GHK-Cu in a regeneration-focused protocol:
+                </p>
+                <ul class="peptide-list">
+                  <li>The clinician chooses a vial size and final target daily dose.</li>
+                  <li>Mixing is done with sterile fluid to reach a usable concentration.</li>
+                  <li>The patient receives simple, clear instructions on daily volume.</li>
+                </ul>
+                <p class="peptide-subtle-note">
+                  Because GHK-Cu can be used in different forms (topical vs injectable), form and dose are strictly
+                  provider-dependent.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        <strong>Educational Notice:</strong> All protocols and peptide descriptions on this page are for information and
+        education only. They are not medical advice, and they are not a substitute for individualized care from a licensed
+        healthcare professional.
+      </p>
+      <p>
+        Outcome does not diagnose, treat, or prescribe. Always consult your physician or qualified medical provider
+        before considering any peptide-based therapy.
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
+
       </p>
     </main>
   </div>
